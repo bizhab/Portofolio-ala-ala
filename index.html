@@ -599,6 +599,58 @@
             footer { padding: 4rem 1.5rem; }
         }
 
+        /* Responsive Footer Styles */
+        .footer-title {
+            color: var(--primary-yellow); 
+            margin-bottom: 1.5rem; 
+            font-size: clamp(2rem, 6vw, 2.5rem); /* Responsive font size */
+        }
+        
+        .footer-text {
+            color: #ccc; 
+            margin: 0 auto 2rem auto;
+        }
+        
+        .footer-btn-wrapper {
+            display: flex; 
+            gap: 0.75rem; 
+            justify-content: center; 
+            flex-wrap: wrap;
+        }
+        
+        .footer-primary-btn {
+            border-color: white !important;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .footer-outline-btn {
+            background: transparent;
+            color: white;
+            border-color: white !important;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* Shadow needs to be white/light to show on dark bg if desired, 
+           or keep black shadow but it won't show. Let's make it visible. */
+        .footer-primary-btn, .footer-outline-btn {
+            box-shadow: 4px 4px 0 0 rgba(255,255,255,0.2) !important;
+        }
+        
+        .footer-outline-btn:hover {
+            background: white;
+            color: var(--text-color);
+            transform: translateY(-2px);
+            box-shadow: none !important;
+        }
+        
+        .footer-copyright {
+            margin-top: 3rem; 
+            border-top: 1px solid #333; 
+            padding-top: 1.5rem; 
+            font-size: 0.8rem; 
+            color: #666;
+        }
+
         /* Mobile Menu Button */
         .menu-toggle {
             display: flex;
@@ -630,8 +682,9 @@
             
             <!-- Desktop Links -->
             <div class="nav-links">
-                <a href="#about" class="btn btn-ghost">Tentang</a>
-                <a href="#projects" class="btn btn-ghost">Proyek</a>
+                <!-- Changed buttons from btn-ghost to btn-outline for box style -->
+                <a href="#about" class="btn btn-outline">Tentang</a>
+                <a href="#projects" class="btn btn-outline">Proyek</a>
                 <a href="#contact" class="btn btn-primary">Kontak</a>
             </div>
 
@@ -811,15 +864,15 @@
     <!-- FOOTER / CTA -->
     <footer id="contact">
         <div class="container">
-            <h2 class="text-display" style="color: var(--primary-yellow); margin-bottom: 1.5rem; font-size: 2.5rem;">Siap Berkolaborasi?</h2>
-            <p class="text-body" style="color: #ccc; margin: 0 auto 1.5rem auto;">
+            <h2 class="text-display footer-title">Siap Berkolaborasi?</h2>
+            <p class="text-body footer-text">
                 Terbuka untuk posisi Project Coordinator atau Junior Developer.
             </p>
-            <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
-                <a href="mailto:bagas@example.com" class="btn btn-primary" style="border-color: white;">Email Saya</a>
-                <a href="#" class="btn btn-outline" style="background: transparent; color: white; border-color: white;">LinkedIn</a>
+            <div class="footer-btn-wrapper">
+                <a href="mailto:bagas@example.com" class="btn btn-primary footer-primary-btn">Email Saya</a>
+                <a href="#" class="btn btn-outline footer-outline-btn">LinkedIn</a>
             </div>
-            <div style="margin-top: 3rem; border-top: 1px solid #333; padding-top: 1.5rem; font-size: 0.8rem; color: #666;">
+            <div class="footer-copyright">
                 &copy; 2026 Bagas Adi Wijaya. Designed with Bauhaus Principles.
             </div>
         </div>
